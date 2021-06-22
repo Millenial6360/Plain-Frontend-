@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+.nav{
+    position: fixed;
+    width: 100vw;
+    box-shadow:  0 0 10px rgb(122, 120, 120);
+}
+.list {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 2rem;
+}
+.logo {
+    margin-right: auto;
+    cursor: pointer;
+    font-weight: bold;
+    transition: fill 250ms ease-in;
+}
+.logo:hover {
+    color: rgb(116, 10, 216);
+}
+.list-item {
+    font-weight: bold;
+    position: relative;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+}
+
+.list-item:hover ul, :focus ul{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.list-item::after {
+    content: '';
+    width: 0;
+    background-color: blueviolet;
+    height: 0.3rem;
+    border-radius: 0.5rem;
+    position:absolute;
+    transition: width 500ms ease-in;
+    left: 1rem;
+    bottom: 0.8rem;
+}
+.list-item:hover::after {
+    width: 80%;
+}
+.drop {
+    position: absolute;
+    top: 4rem;
+    left: -1rem;
+    box-shadow: 0 0 10px rgb(160, 156, 156);
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 12rem;
+    padding : 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 200ms ease-in-out;
+}
+li {
+    list-style: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 200ms ease-in-out;
+    border-radius: 0.5rem;
+}
+.drop li:hover {
+    background-color: rgb(189, 138, 236);
+}

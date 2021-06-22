@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+label {
+    width: 12em;
+    height: 1.5em;
+    background-color: white;
+    position: absolute;
+    cursor: pointer;
+}
+
+/* we are using pseudo lines for bars */
+label::after, label::before {
+    content: '';
+    width: 12em;
+    height: 1.5em;
+    background-color: white;
+    position: absolute;
+    display: block;
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1) ;
+}
+
+
+label::before {
+    top: -250% ;
+    left: 0%;
+    transform-origin: left top;
+}
+label::after {
+    bottom: -250% ;
+    transform-origin: left bottom;
+    left: 0%;
+}
+#toggle:checked ~ label::before {
+    background-color: crimson;
+    transform: rotatez(41deg);
+}
+#toggle:checked ~ label::after {
+    transform: rotatez(-41deg);
+    background-color: crimson;
+}
+#toggle:checked ~ label {
+    background-color: black;
+}
+#toggle ~ label {
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1) ;
+}
+input {
+    display: none;
+}

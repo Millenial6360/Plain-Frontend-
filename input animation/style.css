@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #202e53;
+}
+form {
+    padding: 3rem;
+    border-radius: 0.5rem;
+    background-color: #162447;
+    
+}
+h1{
+    font-weight: bold;
+    color: crimson;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+form>div{ 
+    position: relative;
+    width: 20rem;
+    margin-bottom: 2rem;
+}
+.form-input {  
+    width: 100%;
+    border: 2px solid rgb(174, 244, 255);
+    border-radius: 0.5rem;
+    font-size: inherit;
+    color: white;
+    outline: none;
+    padding: 1.25rem;
+    background: none;
+}
+
+.form-input:focus {
+    border-color: crimson;
+}
+
+.form-input:hover {
+    border-color: rgb(214, 52, 84);
+}
+label{
+    position: absolute;
+    color: white;
+    left:1rem;
+    top: 1rem;
+    padding: 0 0.5rem;
+    cursor: text;
+    transition: top 200ms ease-in,
+        left 200ms ease-in,  
+        font-size 200ms ease-in;
+    background-color: #162447;
+}
+.form-input:hover ~ label,
+.form-input:focus ~ label,
+.form-input:not(:placeholder-shown).form-input:not(:focus) ~label
+ {
+    top: -0.5rem ;
+    font-size: 0.8rem;
+    left:0.8rem ;
+}
+
+input[type = "submit"] {
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    background-color: crimson;
+}
+@media screen and (max-width: 700px)  {
+    form>div{ 
+        position: relative;
+        width: 15rem;
+        margin-bottom: 2rem;
+    } 
+}
+@media screen and (max-width: 400px)  {
+    form>div{ 
+        position: relative;
+        width: 10rem;
+        margin-bottom: 2rem;
+    } 
+    body {
+        font-size: 0.8rem;
+    }
+    form{
+        padding: 2rem;
+    }
+    .form-input {
+        padding: 1rem;
+    }
+}

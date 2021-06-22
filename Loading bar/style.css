@@ -1,0 +1,41 @@
+
+#line-base{
+    height: 20px;
+    width: 500px;
+    background: rgb(235, 232, 232);
+    border-radius: 25px;
+    position: absolute;
+    left: 25%;
+    top: 200px;
+
+}
+#line {
+    height: 20px;
+    width: 100px;
+    background: rgb(255, 0, 85);
+    border-radius: 25px;
+    position: absolute;
+    top: 200px;
+    left: 25%;
+    animation: "slide" 2.5s linear infinite;
+}
+@keyframes slide {
+    0% {
+        -webkit-transform: translateX(0px);
+    }
+    25% {
+        -webkit-transform: translateX(200px);
+        
+    }
+    50% {
+        -webkit-transform: translateX(400px);
+        background: rgb(60, 0, 255);
+    }
+    75% {
+        -webkit-transform: translateX(200px);
+        
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+    }
+}
